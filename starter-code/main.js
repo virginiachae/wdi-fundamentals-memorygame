@@ -38,6 +38,9 @@ var createBoard = function() {
 			alert('You found a match!') 
 		} else if (cardsInPlay[0] !== cardsInPlay[1]) {
 			alert('Sorry, try again.');
+			for (i=0; i<4; i++) {
+			document.getElementsByClassName('card')[i].innerHTML = '';
+			}
 		}
 	}
 
@@ -48,18 +51,16 @@ var createBoard = function() {
 	  	this.innerHTML = '<img src="hpQueen.jpg"/>';
 	  }
 	  cardsInPlay.push(this.getAttribute('data-card'));
-	  if (cardsInPlay.length === 2) {
-	    isMatch(cardsInPlay);
-    	for (i=0; i<4; i++) {
-		document.getElementsByClassName('card')[i].innerHTML = '';
-		}
-	    cardsInPlay = []; 
-	  }
+	  setTimeout(function() {
+	  	if (cardsInPlay.length === 2) {
+	    	isMatch(cardsInPlay);
+	   		 cardsInPlay = []; 
+	 	 }
+	 }, 1000);
 	}
 }
 
 createBoard(); 
-		
 
 			
 	  
