@@ -38,9 +38,6 @@ var createBoard = function() {
 			alert('You found a match!') 
 		} else if (cardsInPlay[0] !== cardsInPlay[1]) {
 			alert('Sorry, try again.');
-			for (i=0; i<4; i++) {
-			document.getElementsByClassName('card')[i].innerHTML = '';
-			}
 		}
 	}
 
@@ -53,12 +50,16 @@ var createBoard = function() {
 	  cardsInPlay.push(this.getAttribute('data-card'));
 	  if (cardsInPlay.length === 2) {
 	    isMatch(cardsInPlay);
+    	for (i=0; i<4; i++) {
+		document.getElementsByClassName('card')[i].innerHTML = '';
+		}
 	    cardsInPlay = []; 
 	  }
 	}
 }
 
 createBoard(); 
+		
 
 			
 	  
