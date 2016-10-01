@@ -22,9 +22,15 @@ h2 {
 	height: 200px;
 	width: 150px;
 	border: 1px black solid; 
-	background: #ffff00;
 	float: left;
 	margin: 20px;
+	background-image: url('hpBack.jpg');
+	background-size: 150px 200px; 
+}
+
+img {
+	height: 200px;
+	width: 150px;
 }
 
 .name {
@@ -64,3 +70,4 @@ footer {
 h1, h2, p, footer {
 	text-align: center; 
 }
+
